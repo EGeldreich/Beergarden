@@ -26,12 +26,13 @@
     <body>
         <header>
             <img src="./img/logo-light.png" alt="logo Revolver" />
+            <input id="menu_toggle" type="checkbox" />
+            <label class="menu_btn" for="menu_toggle">
+                <span></span>
+            </label>
 
             <nav class="navbar flex-row" id="navbar">
                 <div class="section-links flex-row">
-                    <a class="close" href="#">
-                        <i class="fa-solid fa-x"></i>
-                    </a>
                     <a href="#home">home</a>
                     <a href="#tradition">tradition</a>
                     <a href="#services">services</a>
@@ -44,9 +45,6 @@
                     <i class="fa-brands fa-instagram"></i>
                 </div>
             </nav>
-            <a class="burger" href="#navbar">
-                <i class="fa-solid fa-bars"></i>
-            </a>
         </header>
         <main>
             <section id="home">
@@ -265,6 +263,7 @@
                 <iframe
                     src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=202%20avenue%20de%20colmar%20Strasbourg+(Beergarden)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 ></iframe>
+                <div class="iframe-filter"></div>
             </section>
         </main>
         <footer class="flex-row">

@@ -87,10 +87,6 @@ header {
                     opacity: 0.8;
                 }
             }
-
-            & .close {
-                display: none;
-            }
         }
 
         & .socials {
@@ -105,8 +101,11 @@ header {
             }
         }
     }
+    & #menu_toggle {
+        display: none;
+    }
 
-    & .burger {
+    & .menu_btn {
         display: none;
     }
 }
@@ -343,12 +342,29 @@ header {
 #contact {
     height: 700px;
     width: 100%;
+    /* position: absolute; */
 
     & iframe {
         width: 100%;
         height: 100%;
         border: none;
         filter: grayscale(100%) invert(100%) contrast(100%);
+    }
+
+    & .iframe-filter {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: -100%;
+        left: 0;
+        background: rgb(12, 12, 12);
+        background: linear-gradient(
+            0deg,
+            rgba(12, 12, 12, 1) 0%,
+            rgba(12, 12, 12, 0) 20%,
+            rgba(12, 12, 12, 0) 80%,
+            rgba(12, 12, 12, 1) 100%
+        );
     }
 }
 
@@ -374,53 +390,79 @@ footer {
         }
 
         & .navbar {
+            display: block;
             position: fixed;
+            visibility: hidden;
             top: var(--header-height);
-            right: 0;
-            flex-direction: column;
-            background-color: rgba(0, 0, 0, 0.7);
+            right: -200px;
             padding: 20px 0;
-            gap: 20px;
-            transform: translateX(100%);
-            transition: transform 0.2s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: 0.3s ease-in-out;
 
             & .section-links {
                 width: 200px;
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
-
-                & .close {
-                    display: block;
-
-                    &:hover {
-                        color: rgb(163, 16, 16);
-                    }
-                }
             }
 
             & .socials {
-                position: relative;
-                top: 0;
-                right: 0;
-            }
-
-            &:target {
-                /* :target is called when its anchor id #navbar is called by
-                clicking on the hamburger which has href="#navbar" */
-                transform: translateX(0);
+                justify-content: center;
+                margin-top: 20px;
             }
         }
 
-        & .burger {
+        & #menu_toggle {
+            opacity: 0;
+
+            &:checked ~ .menu_btn > span {
+                transform: rotate(45deg);
+            }
+
+            &:checked ~ .menu_btn > span::before {
+                top: 0;
+                transform: rotate(0);
+            }
+
+            &:checked ~ .menu_btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+            &:checked ~ .navbar {
+                visibility: visible;
+                right: 0;
+            }
+        }
+
+        & .menu_btn {
+            display: flex;
+            align-items: center;
             position: fixed;
             right: calc((200px / 2) - 10px);
             top: calc((var(--header-height) / 2) - (23px / 2));
-            display: block;
-            transition: 0.2s all ease-in-out;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 3;
 
-            &:hover {
-                opacity: 0.8;
+            & span,
+            span::before,
+            span::after {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--light-color);
+                transition: 0.3s;
+            }
+            & span::before {
+                content: "";
+                top: -8px;
+            }
+            & span::after {
+                content: "";
+                top: 8px;
             }
         }
     }
