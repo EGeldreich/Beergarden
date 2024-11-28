@@ -24,20 +24,29 @@
         <title>Beergarden</title>
     </head>
     <body>
-        <header class="flex-row">
+        <header>
             <img src="./img/logo-light.png" alt="logo Revolver" />
-            <nav class="flex-row">
-                <a href="#home">home</a>
-                <a href="#tradition">tradition</a>
-                <a href="#services">services</a>
-                <a href="#menu">menu</a>
-                <a href="#contact">contact</a>
+
+            <nav class="navbar flex-row" id="navbar">
+                <div class="section-links flex-row">
+                    <a class="close" href="#">
+                        <i class="fa-solid fa-x"></i>
+                    </a>
+                    <a href="#home">home</a>
+                    <a href="#tradition">tradition</a>
+                    <a href="#services">services</a>
+                    <a href="#menu">menu</a>
+                    <a href="#contact">contact</a>
+                </div>
+                <div class="socials flex-row">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
             </nav>
-            <div class="socials flex-row">
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
+            <a class="burger" href="#navbar">
+                <i class="fa-solid fa-bars"></i>
+            </a>
         </header>
         <main>
             <section id="home">
@@ -179,11 +188,16 @@
                             src="./img/h5-icon-1.png"
                             alt="Vine Grape"
                         />
-                        <h5 class="service_title title">Setch is the first</h5>
-                        <p class="service_text text_body">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Dolorum nisi nulla pariatur dolore quisquam!
-                        </p>
+                        <div class="service_content flex-column">
+                            <h5 class="service_title title">
+                                Setch is the first
+                            </h5>
+                            <p class="service_text text_body">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolorum nisi nulla pariatur
+                                dolore quisquam!
+                            </p>
+                        </div>
                     </div>
                     <div class="service flex-column">
                         <img
@@ -191,11 +205,14 @@
                             src="./img/h5-icon-2.png"
                             alt="Vine Grape"
                         />
-                        <h5 class="service_title title">Second chance</h5>
-                        <p class="service_text text_body">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Dolorum nisi nulla pariatur dolore quisquam!
-                        </p>
+                        <div class="service_content flex-column">
+                            <h5 class="service_title title">Second chance</h5>
+                            <p class="service_text text_body">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolorum nisi nulla pariatur
+                                dolore quisquam!
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="service-duo flex-row">
@@ -205,11 +222,14 @@
                             src="./img/h5-icon-3.png"
                             alt="Vine Grape"
                         />
-                        <h5 class="service_title title">Test it all</h5>
-                        <p class="service_text text_body">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Dolorum nisi nulla pariatur dolore quisquam!
-                        </p>
+                        <div class="service_content flex-column">
+                            <h5 class="service_title title">Test it all</h5>
+                            <p class="service_text text_body">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolorum nisi nulla pariatur
+                                dolore quisquam!
+                            </p>
+                        </div>
                     </div>
                     <div class="service flex-column">
                         <img
@@ -217,11 +237,16 @@
                             src="./img/h5-icon-4.png"
                             alt="Vine Grape"
                         />
-                        <h5 class="service_title title">Refresh your time</h5>
-                        <p class="service_text text_body">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Dolorum nisi nulla pariatur dolore quisquam!
-                        </p>
+                        <div class="service_content flex-column">
+                            <h5 class="service_title title">
+                                Refresh your time
+                            </h5>
+                            <p class="service_text text_body">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolorum nisi nulla pariatur
+                                dolore quisquam!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
